@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #000;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.horizontal-scroll {
+    position: relative;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    background: #000;
+}
+
+.scroll-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 500vw;
+    height: 100%;
+}
+
+.scroll-section {
+    flex: 0 0 100vw;
+    height: 100vh;
+    position: relative;
+    scroll-snap-align: start;
+    background: #000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.image-side img {
+    width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+    /* Added floating effect */
+}
+
+.text-side {
+    padding: 20px;
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+.landing-text .hover-text {
+    display: none;
+}
+
+.landing-image:hover+.landing-text .hover-text {
+    display: block;
+}
+
+.landing-image:hover+.landing-text .default-text {
+    display: none;
+}
+
+/* Contact Form Styles */
+form {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    color: #fff;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #d3d3d3;
+}
+
+form button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+/* Add your existing styles here */
+
+input,
+select,
+textarea {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+    background-color: #f0f0f0;
+}
+
+select {
+    background-color: #fff;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating effect keyframes */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

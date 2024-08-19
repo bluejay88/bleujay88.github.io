@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+.patterns {
+    height: 100vh;
+}
+
+
+
+svg text {
+    font-family: Alice;
+    letter-spacing: 10px;
+    stroke: #ffffff;
+    font-size: 150px;
+    font-weight: 700;
+    stroke-width: 2;
+
+    animation: textAnimate 5s infinite alternate;
+
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: hsl(0, 0%, 100%)
+    }
+
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffstet: -20%;
+        fill: hsla(0, 0%, 100%, 1%)
+    }
+
+}

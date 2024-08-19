@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Product Display</title>
+</head>
+
+<body>
+    <!-- Container where the service product will be injected -->
+    <div id="product-container"></div>
+
+    <!-- Include the script that contains the servProdFull variable -->
+    <script src="serv_prod_inject.js"></script>
+
+    <!-- Call the function to inject the content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            displayServProdFull("product-container");
+        });
+    </script>
+</body>
+
+</html>

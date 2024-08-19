@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #000;
+    overflow: hidden;
+    /* Prevent scrollbars on the body */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.horizontal-scroll {
+    position: relative;
+    height: 100vh;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    /* Hide vertical scrollbars */
+    scroll-snap-type: x mandatory;
+    /* Snap to sections */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+    background: #000;
+    /* Background color to match the overall theme */
+}
+
+.scroll-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 500vw;
+    /* Adjust based on the number of sections */
+    height: 100%;
+}
+
+.scroll-section {
+    flex: 0 0 100vw;
+    /* Each section takes full viewport width */
+    height: 100vh;
+    position: relative;
+    scroll-snap-align: start;
+    /* Snap sections to the start */
+    background: #000;
+    /* Ensure the section background is black to blend with the overlay */
+}
+
+.scroll-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Black__White_Minimalist_Business_Logo.png');
+    /* Logo as background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    /* Set opacity of background image */
+    z-index: -1;
+    /* Place behind the content */
+    transition: opacity 0.5s ease;
+    /* Smooth transition for opacity change */
+}
+
+.scroll-section:hover::before {
+    opacity: 0.8;
+    /* Increase opacity on hover */
+}
+
+.scroll-section .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.scroll-section h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.scroll-section:nth-child(even)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-image: url('Black__White_Minimalist_Business_Logo.png');
+    /* Image between sections */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    /* Start with invisible image */
+    transition: opacity 0.5s ease;
+    /* Smooth transition for opacity change */
+    z-index: -1;
+    /* Place behind the content */
+}
+
+.scroll-section:nth-child(even):hover::after {
+    opacity: 0.3;
+    /* Fade in effect on hover */
+}
+
+@media (max-width: 768px) {
+    .scroll-section h1 {
+        font-size: 2em;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+}

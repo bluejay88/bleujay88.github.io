@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+#text-container {
+    font-family: 'Alice', serif;
+    font-size: 150px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    animation: bounceIn 1s ease-in-out, bounceOut 1s ease-in-out 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0) translateY(100%);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2) translateY(-20%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes bounceOut {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    20% {
+        transform: scale(1.2) translateY(-20%);
+    }
+
+    100% {
+        transform: scale(0) translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.bounce-left {
+    animation-direction: alternate-reverse;
+}
+
+.bounce-right {
+    animation-direction: alternate;
+}
+
+.bounce-up {
+    animation-direction: reverse;
+}
+
+.bounce-down {
+    animation-direction: normal;
+}
