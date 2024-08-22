@@ -1,12 +1,10 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav a');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             // Check if the current document is pissy_4.html
-            if (window.location.pathname.endsWith('index.html')) {
+            if (window.location.pathname.endsWith('pissy_4.html')) {
                 // Prevent default behavior if the current document is pissy_4.html
                 event.preventDefault();
                 
@@ -98,17 +96,17 @@ const pageHeadingsAnimation = (words, id, colors) => {
 
         #${id}-text {
             font-family: Khula, sans-serif;
-            font-size: 2.5em;
+            font-size: 7.5vw;
             color: ${colors[0]}
             
         }
 
         .console-underscore {
-            display: flex;
+            display: inline-block !important; 
             position: relative;
             top: -0.14em;
             left: 5px;
-            font-size: 2.5em;
+            font-size: 7.5vw;
             font-family: Khula, sans-serif;
             color: ${colors[0]};
         }
@@ -179,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
     pageHeadingsAnimation(['About Us'], 'about-us-heading', ['tomato', 'rebeccapurple', 'lightblue']);
     pageHeadingsAnimation(['Contact Us'], 'contact-us-heading', ['tomato', 'rebeccapurple', 'lightblue']);
     pageHeadingsAnimation(['Port<br>folio'], 'portfolio-heading', ['tomato', 'rebeccapurple', 'lightblue']);
+    pageHeadingsAnimation(['About Us'], 'about2-heading', ['tomato', 'rebeccapurple', 'lightblue']);
+    pageHeadingsAnimation(['Contact Us'], 'contact2-heading', ['tomato', 'rebeccapurple', 'lightblue']);
 });
 // Hamburger menu
 function toggleMenu() {
