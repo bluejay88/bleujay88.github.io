@@ -32,7 +32,7 @@ header {
     width: 100px;
 }
 
-div {
+div{
     display: flex;
 }
 
@@ -68,7 +68,7 @@ nav a:hover {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     background: #000;
-    /*   margin-top: 10px;*/
+ /*   margin-top: 10px;*/
 }
 
 .scroll-wrapper {
@@ -90,6 +90,10 @@ nav a:hover {
     overflow: hidden;
 }
 
+.contact {
+    flex-direction: column;
+}
+
 .container {
     display: flex;
     width: 90%;
@@ -103,12 +107,9 @@ nav a:hover {
     align-items: center;
     position: relative;
     flex: 1;
-    flex-basis: 33.33%;
-    /* 1/3 of the width */
-    overflow: visible;
-    /* Allow image to overflow */
-    z-index: 2;
-    /* Higher z-index to ensure it’s on top of text-side */
+    flex-basis: 33.33%; /* 1/3 of the width */
+    overflow: visible; /* Allow image to overflow */
+    z-index: 2; /* Higher z-index to ensure it’s on top of text-side */
 }
 
 .image-side img {
@@ -123,20 +124,16 @@ nav a:hover {
 }
 
 .text-side {
-
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-basis: 66.67%;
-    /* 2/3 of the width */
+    flex-basis: 66.67%; /* 2/3 of the width */
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    /* Lower z-index to ensure image-side is on top */
-    background: #000;
-    /* Ensure background is black for contrast */
-    transition: flex-basis 1s ease, transform 1s ease;
-    /* Transition for resizing */
+    z-index: 1; /* Lower z-index to ensure image-side is on top */
+    background: #000; /* Ensure background is black for contrast */
+    transition: flex-basis 1s ease, transform 1s ease; /* Transition for resizing */
 }
 
 .text-side h1 {
@@ -160,34 +157,30 @@ nav a:hover {
 }
 
 .image-left:hover img {
-    transform: translateX(66.67%) scaleX(-1);
-    /* Slide image to the right and mirror */
-    opacity: 0.8;
-    /* Slight transparency for image going beyond */
+    transform: translateX(66.67%) scaleX(-1); /* Slide image to the right and mirror */
+    opacity: 0.8; /* Slight transparency for image going beyond */
 }
 
 .image-right:hover img {
-    transform: translateX(-66.67%) scaleX(-1);
-    /* Slide image to the left and mirror */
-    opacity: 0.8;
-    /* Slight transparency for image going beyond */
+    transform: translateX(-66.67%) scaleX(-1); /* Slide image to the left and mirror */
+    opacity: 0.8; /* Slight transparency for image going beyond */
 }
 
 /* Animation on section5*/
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    background-color: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  background-color: #f4f6f8;
 }
 
 .section5container {
@@ -198,10 +191,10 @@ body {
     width: 100%;
     overflow: hidden;
     z-index: 4;
-}
-
-.image {
-
+  }
+  
+  .image {
+    
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -214,9 +207,9 @@ body {
     background-size: cover;
     transition: ease-in-out 0.3s;
     overflow-y: visible;
-}
-
-.container__image:before {
+  }
+  
+  .container__image:before {
     content: ' ';
     align-items: center;
     width: 70%;
@@ -234,58 +227,55 @@ body {
     transform-origin: right;
     opacity: 0;
     z-index: -1;
-}
-
-.container__info {
+  }
+  
+  .container__info {
     position: absolute;
     line-height: 1.8;
     transition: ease-in-out 0.3s;
     opacity: 0;
     justify-content: none;
-}
-
-.container__location {
+  }
+  
+  .container__location {
     transition-delay: 0.15s;
-}
-
-.container__image:hover {
+  }
+  
+  .container__image:hover {
     border-radius: 0;
-    width: 80%;
-    height: auto;
+    width: 40%;
+    height: 20%;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04),
-        0px 2px 6px rgba(9, 55, 53, 0.08),
-        0px 16px 24px rgba(9, 55, 53, 0.1),
-        0px 24px 32px rgba(9, 55, 53, 0.14);
-}
-
-.container__image:hover:before {
-    width: 80%;
+                0px 2px 6px rgba(9, 55, 53, 0.08),
+                0px 16px 24px rgba(9, 55, 53, 0.1),
+                0px 24px 32px rgba(9, 55, 53, 0.14);
+  }
+  
+  .container__image:hover:before {
+    
     opacity: 0.18;
     filter: blur(10px) saturate(100%);
     transform: scale(2.8) translate3d(-18%, 0px, 0px);
-}
-
-.container__image:hover .container__author {
+  }
+  
+  .container__image:hover .container__author {
     transform: translate3d(0%, -60%, 0px);
     opacity: 1;
-}
+  }
 
-.container__image:hover .container__location {
+  .container__image:hover .container__location {
     transform: translate3d(0%, 60%, 0px);
     opacity: 1;
-}
-
+  }
+  
 
 .overlay {
     position: absolute;
     top: 0;
-    left: 33.33%;
-    /* Start from the edge of the image on the left */
-    width: 66.67%;
-    /* Cover the text side */
+    left: 33.33%; /* Start from the edge of the image on the left */
+    width: 66.67%; /* Cover the text side */
     height: 100%;
-    background: black;
-    /* Semi-transparent white */
+    background: black; /* Semi-transparent white */
     color: white;
     display: flex;
     align-items: center;
@@ -294,22 +284,18 @@ body {
     box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.5s ease, left 0.5s ease;
-    z-index: 3;
-    /* Higher z-index to ensure it’s on top of both image-side and text-side */
+    z-index: 3; /* Higher z-index to ensure it’s on top of both image-side and text-side */
 }
 
 .image-left:hover .overlay {
     opacity: 1;
-    left: 0;
-    /* Move to cover the entire viewport */
+    left: 0; /* Move to cover the entire viewport */
 }
 
 .image-right:hover .overlay {
     opacity: 1;
-    right: 0;
-    /* Move to cover the entire viewport from the right */
-    left: auto;
-    /* Reset left to auto */
+    right: 0; /* Move to cover the entire viewport from the right */
+    left: auto; /* Reset left to auto */
 }
 
 /*.arrow {
@@ -349,7 +335,7 @@ body {
 .right-con {
     position: absolute;
     bottom: 20px;
-    right: 5px;
+    right:5px;
     width: 40px;
     height: 40px;
     background: black;
@@ -366,7 +352,7 @@ body {
 .left-con {
     position: absolute;
     bottom: 20px;
-    left: 5px;
+    left:5px;
     width: 40px;
     height: 40px;
     background: black;
@@ -420,7 +406,7 @@ body {
 }
 
 .next {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -445,26 +431,11 @@ body {
 }
 
 @keyframes bounceAlpha {
-    0% {
-        opacity: 1;
-        transform: translateX(0px) scale(1);
-    }
-
-    25% {
-        opacity: 0;
-        transform: translateX(10px) scale(0.9);
-    }
-
-    26% {
-        opacity: 0;
-        transform: translateX(-10px) scale(0.9);
-    }
-
-    55% {
-        opacity: 1;
-        transform: translateX(0px) scale(1);
-    }
-}
+    0% {opacity: 1; transform: translateX(0px) scale(1);}
+    25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+    26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+    55% {opacity: 1; transform: translateX(0px) scale(1);}
+  }
 
 .bounceAlpha {
     animation-name: bounceAlpha;
@@ -498,25 +469,10 @@ body {
 
 
 @keyframes bounceAlphaback {
-    0% {
-        opacity: 1;
-        transform: translateX(0px) scale(1);
-    }
-
-    25% {
-        opacity: 0;
-        transform: translateX(-10px) scale(0.9);
-    }
-
-    26% {
-        opacity: 0;
-        transform: translateX(10px) scale(0.9);
-    }
-
-    55% {
-        opacity: 1;
-        transform: translateX(0px) scale(1);
-    }
+    0% { opacity: 1; transform: translateX(0px) scale(1); }
+    25% { opacity: 0; transform: translateX(-10px) scale(0.9); }
+    26% { opacity: 0; transform: translateX(10px) scale(0.9); }
+    55% { opacity: 1; transform: translateX(0px) scale(1); }
 }
 
 .bounceAlphaback {
@@ -558,8 +514,8 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-
-
+    
+    
 }
 
 /* Column styling */
@@ -571,20 +527,13 @@ body {
 
 /* Container for the flip effect */
 .flip-container {
-    perspective: 1000px;
-    /* Provides 3D perspective */
-    width: 300px;
-    /* Adjust to your desired width */
-    height: 300px;
-    /* Adjust to your desired height */
-    margin: 20px;
-    /* Adjust as needed */
-    border-radius: 50%;
-    /* Circular container */
-    overflow: hidden;
-    /* Ensures content does not overflow the circular border */
-    position: relative;
-    /* Ensure child elements are positioned relative to this container */
+    perspective: 1000px; /* Provides 3D perspective */
+    width: 300px; /* Adjust to your desired width */
+    height: 300px; /* Adjust to your desired height */
+    margin: 20px; /* Adjust as needed */
+    border-radius: 50%; /* Circular container */
+    overflow: hidden; /* Ensures content does not overflow the circular border */
+    position: relative; /* Ensure child elements are positioned relative to this container */
 }
 
 /* The flip card */
@@ -611,47 +560,36 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 5px solid white;
-    /* White border */
-    border-radius: 50%;
-    /* Circular border */
+    border: 5px solid white; /* White border */
+    border-radius: 50%; /* Circular border */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    backface-visibility: hidden;
-    /* Hides the back side when facing away */
+    backface-visibility: hidden; /* Hides the back side when facing away */
 }
 
 /* Front side of the flip card (image) */
 .flip-card-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* Ensure image covers the circular area */
-    border-radius: 50%;
-    /* Ensure image maintains circular shape */
+    object-fit: cover; /* Ensure image covers the circular area */
+    border-radius: 50%; /* Ensure image maintains circular shape */
 }
 
 /* Back side of the flip card (text) */
 .flip-card-back {
-    background-color: black;
-    /* White background for text side */
-    color: white;
-    /* Black text color */
-    transform: rotateY(180deg);
-    /* Hide back side initially */
+    background-color: black; /* White background for text side */
+    color: white; /* Black text color */
+    transform: rotateY(180deg); /* Hide back side initially */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    /* Adjust padding as needed */
+    padding: 20px; /* Adjust padding as needed */
     box-sizing: border-box;
-    border-radius: 50%;
-    /* Circular background */
-    overflow: hidden;
-    /* Ensures text does not overflow the circular border */
+    border-radius: 50%; /* Circular background */
+    overflow: hidden; /* Ensures text does not overflow the circular border */
 }
 
 /* Flip effect on hover */
@@ -662,51 +600,41 @@ body {
 /* Disable hover effect for the 1st section */
 .scroll-section:nth-child(1) .image-left:hover img,
 .scroll-section:nth-child(1) .image-right:hover img {
-    transform: none;
-    /* Disable transform */
-    opacity: 1;
-    /* Ensure full opacity */
+    transform: none; /* Disable transform */
+    opacity: 1; /* Ensure full opacity */
 }
 
 .scroll-section:nth-child(1) .image-left:hover .overlay,
 .scroll-section:nth-child(1) .image-right:hover .overlay {
-    opacity: 0;
-    /* Disable overlay */
+    opacity: 0; /* Disable overlay */
 }
 
 .scroll-section:nth-child(1) .image-side {
-    flex-basis: 33.33%;
-    /* Ensure proper sizing for image-side */
+    flex-basis: 33.33%; /* Ensure proper sizing for image-side */
 }
 
 .scroll-section:nth-child(1) .text-side {
-    flex-basis: 66.67%;
-    /* Ensure proper sizing for text-side */
+    flex-basis: 66.67%; /* Ensure proper sizing for text-side */
 }
 
 /* Disable hover effect for the 3rd section */
 .scroll-section:nth-child(3) .image-left:hover img,
 .scroll-section:nth-child(3) .image-right:hover img {
-    transform: none;
-    /* Disable transform */
-    opacity: 1;
-    /* Ensure full opacity */
+    transform: none; /* Disable transform */
+    opacity: 1; /* Ensure full opacity */
 }
 
 .scroll-section:nth-child(3) .image-left:hover .overlay,
 .scroll-section:nth-child(3) .image-right:hover .overlay {
-    opacity: 0;
-    /* Disable overlay */
+    opacity: 0; /* Disable overlay */
 }
 
 .scroll-section:nth-child(3) .image-side {
-    flex-basis: 33.33%;
-    /* Ensure proper sizing for image-side */
+    flex-basis: 33.33%; /* Ensure proper sizing for image-side */
 }
 
 .scroll-section:nth-child(3) .text-side {
-    flex-basis: 66.67%;
-    /* Ensure proper sizing for text-side */
+    flex-basis: 66.67%; /* Ensure proper sizing for text-side */
 }
 
 /* Existing CSS remains unchanged */
@@ -716,16 +644,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-basis: 66.67%;
-    /* 2/3 of the width */
+    flex-basis: 66.67%; /* 2/3 of the width */
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    /* Lower z-index to ensure image-side is on top */
-    background: #000;
-    /* Ensure background is black for contrast */
-    transition: flex-basis 1s ease, transform 1s ease;
-    /* Transition for resizing */
+    z-index: 1; /* Lower z-index to ensure image-side is on top */
+    background: #000; /* Ensure background is black for contrast */
+    transition: flex-basis 1s ease, transform 1s ease; /* Transition for resizing */
 }
 
 
@@ -757,12 +681,12 @@ body {
 
 .hamburger-menu {
     display: none;
-}
-
-.hamburger-icon {
+  }
+  
+  .hamburger-icon {
     font-size: 24px;
     cursor: pointer;
-}
+  }
 
 /* Services Styles */
 
@@ -772,8 +696,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 70%;
-    height: auto;
+
     background: #fff;
     margin: 20px;
 }
@@ -788,7 +711,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 100%;
     transition: .3s linear;
 }
 
@@ -929,50 +851,44 @@ body {
         transform: translate3d(0%, -80%, 0px);
         opacity: 1;
         justify-content: none;
-    }
-
-    .container__image:hover .container__location {
+      }
+    
+      .container__image:hover .container__location {
         transform: translate3d(0%, 80%, 0px);
         opacity: 1;
         justify-content: none;
-    }
+      }
 
     nav ul {
-        display: none;
-        /* Hide the default menu */
+        display: none; /* Hide the default menu */
         flex-direction: column;
         width: 100%;
-        background-color: none;
-        /* Background color for the dropdown menu */
+        background-color: none; /* Background color for the dropdown menu */
         position: absolute;
-        top: 60px;
-        /* Adjust based on your layout */
+        top: 60px; /* Adjust based on your layout */
         right: 0;
         left: 0;
         z-index: 1000;
-    }
-
-    .hamburger-menu {
-        display: flex;
-        /* Show hamburger icon */
+      }
+    
+      .hamburger-menu {
+        display: flex; /* Show hamburger icon */
         justify-content: end;
-    }
-
-    nav ul.show {
-        display: flex;
-        /* Show the menu when hamburger is clicked */
+      }
+    
+      nav ul.show {
+        display: flex; /* Show the menu when hamburger is clicked */
         flex-direction: column-reverse;
         align-items: end;
-    }
-
-    nav ul li {
+      }
+    
+      nav ul li {
         margin: 0;
         padding: 10px 15px;
         flex
-    }
-
-    nav a {
-        font-size: 18px;
-        /* Adjust font size for mobile */
-    }
+      }
+    
+      nav a {
+        font-size: 18px; /* Adjust font size for mobile */
+      }
 }
