@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Arrow click navigation
     document.querySelectorAll('.arrow').forEach(arrow => {
         arrow.addEventListener('click', function() {
-            const direction = this.classList.contains('arrow-left') ? -1 : 1;
+            const direction = this.classList.contains('previous') ? -1 : 1;
             horizontalScroll.scrollBy({
                 left: direction * window.innerWidth,
                 behavior: 'smooth'
@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -72,10 +75,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
 const pageHeadingsAnimation = (words, id, colors) => {
     // Get the target element
     const targetElement = document.getElementById(id);
     if (!targetElement) return;
+    
 
     // Create the HTML structure for the animation
     targetElement.innerHTML = `
@@ -92,11 +98,11 @@ const pageHeadingsAnimation = (words, id, colors) => {
             font-family: Khula, sans-serif;
             font-size: 2.5em;
             color: ${colors[0]};
-            display: inline;
+            display: flex;
         }
 
         .console-underscore {
-            display: inline-block;
+            display: flex;
             position: relative;
             top: -0.14em;
             left: 5px;
@@ -170,5 +176,52 @@ document.addEventListener('DOMContentLoaded', function() {
     pageHeadingsAnimation(['Services'], 'services-heading', ['tomato', 'rebeccapurple', 'lightblue']);
     pageHeadingsAnimation(['About Us'], 'about-us-heading', ['tomato', 'rebeccapurple', 'lightblue']);
     pageHeadingsAnimation(['Contact Us'], 'contact-us-heading', ['tomato', 'rebeccapurple', 'lightblue']);
-    pageHeadingsAnimation(['Portfolio'], 'portfolio-heading', ['tomato', 'rebeccapurple', 'lightblue']);
+    pageHeadingsAnimation(['Port<br>folio'], 'portfolio-heading', ['tomato', 'rebeccapurple', 'lightblue']);
 });
+// Hamburger menu
+function toggleMenu() {
+    const menu = document.querySelector('.nav-links');
+    menu.classList.toggle('show');
+  }
+
+// Design Card for Services
+ // Change The Picture, Text, Description, and Associated Element Color when Theme Options Are Clicked.
+ $(".product-colors span").click(function () {
+    var id = $(this).attr('id').split('-')[1];
+    var colorPrimary = $(this).attr("data-color-primary");
+    var colorSecondary = $(this).attr("data-color-sec");
+    var imagePath = $(this).attr("data-pic");
+    var hoverImagePath = $(this).attr("data-hover-pic");
+    var text = $(this).attr("data-text");
+    var desc = $(this).attr("data-desc");
+
+    $(".product-colors span").removeClass("active");
+    $(this).addClass("active");
+
+    $("#product-title" + id).css("color", colorSecondary);
+    $("#product-price" + id).css("color", colorSecondary);
+    $("#imgBx" + id).css("background", colorSecondary);
+    $("#contact-button" + id).css("background", colorSecondary);
+    $("#product-image" + id).attr('src', imagePath);
+    $("#product-title" + id).text(text);
+
+    $(".product-description").hide();
+    $(desc).show();
+
+    $(".product-image").hover(
+        function () {
+            $(this).attr('src', hoverImagePath);
+        }, function () {
+            $(this).attr('src', imagePath);
+        }
+    );
+});
+
+// Initial hover effect
+$(".product-image").hover(
+    function () {
+        $(this).attr('src', '25.png');
+    }, function () {
+        $(this).attr('src', '24.png');
+    }
+);
