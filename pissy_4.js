@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             // Check if the current document is pissy_4.html
-            if (window.location.pathname.endsWith('pissy_4.html')) {
+            if (window.location.pathname.endsWith('index.html')) {
                 // Prevent default behavior if the current document is pissy_4.html
                 event.preventDefault();
                 
