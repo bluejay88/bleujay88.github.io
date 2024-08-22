@@ -99,8 +99,8 @@ const pageHeadingsAnimation = (words, id, colors) => {
         #${id}-text {
             font-family: Khula, sans-serif;
             font-size: 2.5em;
-            color: ${colors[0]};
-            display: flex;
+            color: ${colors[0]}
+            
         }
 
         .console-underscore {
