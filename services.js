@@ -6,20 +6,123 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             // Check if the current document is pissy_4.html
-            const isBlogPageLink = targetHref.endsWith('Blog_Page_Heading_Animation.html');
-            const isFAQPageLink = targetHref.endsWith('faq_page_heading_animations.html');
+            if (window.location.pathname.endsWith('pissy_4.html')) {
+                // Prevent default behavior if the current document is pissy_4.html
+                event.preventDefault();
+                
+                // Extract the target ID from the href attribute
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+    
+                // Smooth scroll to the target section if it exists
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // If not pissy_4.html, do not prevent the default behavior
+                // This allows the browser to handle the navigation
+            }
+        });
+    });
+    
 
+    const contactLink = document.querySelector('nav a[href="#section4"]');
+
+    //contactLink.addEventListener('click', function(event) {
+    //    event.preventDefault();
+    //    window.location.href = 'mailto:contact@AnchorWebDesigns.com?subject=Hi I am contacting you from AnchorWebDesigns.com about services';
+    //});
+
+    // Add horizontal scrolling with mouse wheel
+    const horizontalScroll = document.querySelector('.horizontal-scroll');
+    horizontalScroll.addEventListener('wheel', function(event) {
+        if (event.deltaY !== 0) {
+            event.preventDefault();
+            this.scrollBy({
+                left: event.deltaY < 0 ? -window.innerWidth : window.innerWidth,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+    // Arrow click navigation
+    document.querySelectorAll('.round').forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            const direction = this.classList.contains('previous') ? -1 : 1;
+            horizontalScroll.scrollBy({
+                left: direction * window.innerWidth,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+// function([string1, string2],target id,[color1,color2])    
+consoleText(['Website Design', 'UI/UX Design' , 'Digital Marketing', 'Branding', " Logo Design", "Hosting Options", " &lt;a&gt; Anchor Website Design Studio"], 'text',['tomato','palegoldenrod','rebeccapurple','lightblue','lightcoral','rebeccapurple','white']);
+
+function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id)
+  target.setAttribute('style', 'color:' + colors[0])
+  window.setInterval(function() {
+
+    if (letterCount === 0 && waiting === false) {
+      waiting = true;
+      target.innerHTML = words[0].substring(0, letterCount)
+      window.setTimeout(function() {
+        var usedColor = colors.shift();
+        colors.push(usedColor);
+        var usedWord = words.shift();
+        words.push(usedWord);
+        x = 1;
+        target.setAttribute('style', 'color:' + colors[0])
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (letterCount === words[0].length + 1 && waiting === false) {
+      waiting = true;
+      window.setTimeout(function() {
+        x = -1;
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (waiting === false) {
+      target.innerHTML = words[0].substring(0, letterCount)
+      letterCount += x;
+    }
+  }, 120)
+  window.setInterval(function() {
+    if (visible === true) {
+      con.className = 'console-underscore hidden'
+      visible = false;
+
+    } else {
+      con.className = 'console-underscore'
+
+      visible = true;
+    }
+  }, 400)
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Check if the current document is pissy_4.html
+            const isBlogPageLink = targetHref.endsWith('Blog_Page_Heading_Animation.html');
+            
             if (isBlogPageLink) {
                 // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
                 return;
             }
-            
-            if (isFAQPageLink) {
-                // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
-                return;
-            }
-
-
             if (window.location.pathname.endsWith('pissy_4.html')) {
                 // Prevent default behavior if the current document is pissy_4.html
                 event.preventDefault();
@@ -70,8 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
 
 
 
@@ -205,48 +306,44 @@ function toggleMenu() {
     menu.classList.toggle('show');
   }
 
+// Design Card for Services
+ // Change The Picture, Text, Description, and Associated Element Color when Theme Options Are Clicked.
+ $(".product-colors span").click(function () {
+    var id = $(this).attr('id').split('-')[1];
+    var colorPrimary = $(this).attr("data-color-primary");
+    var colorSecondary = $(this).attr("data-color-sec");
+    var imagePath = $(this).attr("data-pic");
+    var hoverImagePath = $(this).attr("data-hover-pic");
+    var text = $(this).attr("data-text");
+    var desc = $(this).attr("data-desc");
 
-  document.addEventListener("DOMContentLoaded", function() {
-    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
-    if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-        lazyImages.forEach(function(lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    }
+    $(".product-colors span").removeClass("active");
+    $(this).addClass("active");
+
+    $("#product-title" + id).css("color", colorSecondary);
+    $("#product-price" + id).css("color", colorSecondary);
+    $("#imgBx" + id).css("background", colorSecondary);
+    $("#contact-button" + id).css("background", colorSecondary);
+    $("#product-image" + id).attr('src', imagePath);
+    $("#product-title" + id).text(text);
+
+    $(".product-description").hide();
+    $(desc).show();
+
+    $(".product-image").hover(
+        function () {
+            $(this).attr('src', hoverImagePath);
+        }, function () {
+            $(this).attr('src', imagePath);
+        }
+    );
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-        let lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
-                });
-            });
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        }
-    });
-    function animate() {
-        // Animation logic
-        requestAnimationFrame(animate);
+// Initial hover effect
+$(".product-image").hover(
+    function () {
+        $(this).attr('src', '25.png');
+    }, function () {
+        $(this).attr('src', '24.png');
     }
-    animate();
-    
-
-
+);

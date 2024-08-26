@@ -32,8 +32,11 @@ function showText() {
         setTimeout(showText, 2000); // Wait for animation to complete before showing next text
     } else {
         // Redirect to a predetermined HTML page after 2 seconds
-        setTimeout(() => {
-            window.location.href = "service_new.html"; // Change this to your target URL
+        setTimeout(function() {
+            // Retrieve the target URL from query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const target = urlParams.get('target') || 'default.html'; // Fallback URL if no target specified
+            window.location.href = target;
         }, 2000);
     }
 }

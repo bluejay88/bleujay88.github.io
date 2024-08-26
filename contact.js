@@ -1,5 +1,9 @@
 
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav a');
 
@@ -70,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 
 
 
@@ -204,49 +207,5 @@ function toggleMenu() {
     const menu = document.querySelector('.nav-links');
     menu.classList.toggle('show');
   }
-
-
-  document.addEventListener("DOMContentLoaded", function() {
-    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
-    if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-        lazyImages.forEach(function(lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    }
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-        let lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
-                });
-            });
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        }
-    });
-    function animate() {
-        // Animation logic
-        requestAnimationFrame(animate);
-    }
-    animate();
-    
 
 

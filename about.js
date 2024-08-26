@@ -1,5 +1,34 @@
 
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Check if the current document is pissy_4.html
+            const isBlogPageLink = targetHref.endsWith('Blog_Page_Heading_Animation.html');
+            
+            if (isBlogPageLink) {
+                // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
+                return;
+            }
+            if (window.location.pathname.endsWith('pissy_4.html')) {
+                // Prevent default behavior if the current document is pissy_4.html
+                event.preventDefault();
+                
+                // Extract the target ID from the href attribute
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+    
+                // Smooth scroll to the target section if it exists
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // 
+
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav a');
 
@@ -70,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 
 
 
@@ -204,49 +232,5 @@ function toggleMenu() {
     const menu = document.querySelector('.nav-links');
     menu.classList.toggle('show');
   }
-
-
-  document.addEventListener("DOMContentLoaded", function() {
-    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
-    if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-        lazyImages.forEach(function(lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    }
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-        let lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
-                });
-            });
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        }
-    });
-    function animate() {
-        // Animation logic
-        requestAnimationFrame(animate);
-    }
-    animate();
-    
 
 

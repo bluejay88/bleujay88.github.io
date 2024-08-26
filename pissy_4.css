@@ -179,7 +179,7 @@ body {
   
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 2.1vw;
   background-color: #f4f6f8;
 }
 
@@ -277,6 +277,7 @@ body {
     height: 100%;
     background: black; /* Semi-transparent white */
     color: white;
+    font-size: 2vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -298,39 +299,7 @@ body {
     left: auto; /* Reset left to auto */
 }
 
-/*.arrow {
-    position: absolute;
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    color: #000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
 
-.arrow-right::before {
-    content: '→';
-    font-size: 24px;
-}
-
-.arrow-left::before {
-    content: '←';
-    font-size: 24px;
-}
-
-.arrow-right {
-    right: 20px;
-}
-
-.arrow-left {
-    left: 20px;
-}*/
 
 .right-con {
     position: absolute;
@@ -412,28 +381,7 @@ body {
     background-position: center;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
 
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.flip-container p{
-    font-size: 2vw;
-}
-
-.flip-container {
-    animation: float 3s ease-in-out infinite;
-    
-}
 
 @keyframes bounceAlpha {
     0% {opacity: 1; transform: translateX(0px) scale(1);}
@@ -511,96 +459,6 @@ body {
 }
 
 
-
-
-
-.portfolio_photos {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
-    
-}
-
-/* Column styling */
-.photo-column {
-    flex: 1;
-    flex-direction: row;
-    padding: 10px;
-}
-
-/* Container for the flip effect */
-.flip-container {
-    perspective: 1000px; /* Provides 3D perspective */
-    width: 30vw; /* Adjust to your desired width */
-    height: 30vw; /* Adjust to your desired height */
-    margin: 20px; /* Adjust as needed */
-    border-radius: 50%; /* Circular container */
-    overflow: auto; /* Ensures content does not overflow the circular border */
-    position: relative; /* Ensure child elements are positioned relative to this container */
-}
-
-/* The flip card */
-.flip-card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-}
-
-/* The inner part of the flip card */
-.flip-card-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-/* Front and back of the flip card */
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 5px solid white; /* White border */
-    border-radius: 50%; /* Circular border */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden; /* Hides the back side when facing away */
-}
-
-/* Front side of the flip card (image) */
-.flip-card-front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure image covers the circular area */
-    border-radius: 50%; /* Ensure image maintains circular shape */
-}
-
-/* Back side of the flip card (text) */
-.flip-card-back {
-    background-color: black; /* White background for text side */
-    color: white; /* Black text color */
-    transform: rotateY(180deg); /* Hide back side initially */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px; /* Adjust padding as needed */
-    box-sizing: border-box;
-    border-radius: 50%; /* Circular background */
-    overflow: hidden; /* Ensures text does not overflow the circular border */
-}
-
-/* Flip effect on hover */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
 
 /* Disable hover effect for the 1st section */
 .scroll-section:nth-child(1) .image-left:hover img,
@@ -693,148 +551,6 @@ body {
     cursor: pointer;
   }
 
-/* Services Styles */
-
-
-
-.content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    background: black;
-    margin: 20%;
-}
-
-.content h1 {
-    background: black;
-}
-
-.content .imgBx {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    transition: .3s linear;
-}
-
-.content .imgBx:before {
-    content: 'Web Design';
-    position: absolute;
-    top: 0px;
-    left: 24px;
-    color: white;
-    font-size: 7vw;
-    font-weight: 800;
-}
-
-.content .imgBx img {
-    position: relative;
-    width: 100%;
-    transition: .9s linear;
-}
-
-.content .details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 40px;
-}
-
-.content .details h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 4vw;
-    line-height: 1em;
-    color: #0074D9;
-}
-
-.content .details h2 span {
-    font-size: 1.6vw;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: white;
-}
-
-.content .details p {
-    max-width: 85%;
-    margin-left: 15%;
-    color: white;
-    font-size: 1.5vw;
-}
-
-.content .details h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 4vw;
-    color: white;
-    float: left;
-}
-
-.content .details button {
-    background: #0074D9;
-    color: #fff;
-    border: none;
-    outline: none;
-    padding: 15px 20px;
-    margin-top: 5px;
-    font-size: 1.2vw;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 40px;
-    float: right;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.content .details button:hover {
-    background-color: #005bb5;
-    transform: scale(1.1);
-}
-
-.product-colors span {
-    width: 26px;
-    height: 26px;
-    top: 7px;
-    margin-right: 12px;
-    left: 10px;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.theme1 {
-    background: #001F3F;
-}
-
-.theme2 {
-    background: #85144b;
-}
-
-.theme3 {
-    background: #2ECC40;
-}
-
-.product-colors .active:after {
-    content: "";
-    width: 36px;
-    height: 36px;
-    border: 2px solid #000;
-    position: absolute;
-    border-radius: 50%;
-    box-sizing: border-box;
-    left: -5px;
-    top: -5px;
-}
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -891,23 +607,12 @@ body {
       nav ul li {
         margin: 0;
         padding: 10px 15px;
-        flex
+        
       }
     
       nav a {
         font-size: 18px; /* Adjust font size for mobile */
       }
       
-      .scroll-section #gridSection{
-        display: flex;
-        flex-direction: column;
-        margin-top: 70px;
-        overflow-y: visible;
-    }
-
-      .flip-container{
-        width: 40vw;
-        height: 40vw;
-        overflow-y: auto;
-      }
 }
+
