@@ -20,9 +20,9 @@
         }
 
         .main-content {
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            padding: 15px;
             background: black;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
@@ -30,23 +30,26 @@
         }
 
         h1 {
+            font-size: 22px;
             color: white;
         }
 
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin: 8px 0 4px;
             text-align: left;
+            font-size: 14px;
         }
 
         input, select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 8px;
+            margin-bottom: 12px;
             border: 1px solid #ffffff;
             border-radius: 5px;
             background: #222;
             color: white;
+            font-size: 14px;
         }
 
         button {
@@ -62,6 +65,29 @@
 
         button:hover {
             background-color: darkblue;
+        }
+
+        @media (max-width: 600px) {
+            .main-content {
+                width: 95%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            label {
+                font-size: 13px;
+            }
+
+            input, select {
+                font-size: 13px;
+            }
+
+            button {
+                font-size: 14px;
+            }
         }
 
     </style>
@@ -151,15 +177,6 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                 </select>
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
 
                 <button type="submit">Submit</button>
             </fieldset>
