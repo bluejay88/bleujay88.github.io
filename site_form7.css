@@ -54,7 +54,8 @@ nav a:hover {
 
 /* Main content styles */
 .main-content {
-    padding-top: 70px; /* Space for the fixed header */
+    padding-top: 30vh; /* Move the form down by 30% of the viewport height */
+    box-sizing: border-box;
 }
 
 .scroll-container {
